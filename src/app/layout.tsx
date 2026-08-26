@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const themeInitScript = `
-(function(){try{var t=localStorage.getItem('wave-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+(function(){try{var t=localStorage.getItem('wave-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){}})();
 `;
 
 export default function RootLayout({

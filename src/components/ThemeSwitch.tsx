@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 
-type Mode = "auto" | "light" | "dark";
+type Mode = "light" | "dark";
 
 function subscribe(callback: () => void) {
   window.addEventListener("wave-theme-change", callback);
@@ -11,25 +11,21 @@ function subscribe(callback: () => void) {
 
 function getSnapshot(): Mode {
   try {
-    return (localStorage.getItem("wave-theme") as Mode) || "auto";
+    return (localStorage.getItem("wave-theme") as Mode) || "dark";
   } catch {
-    return "auto";
+    return "dark";
   }
 }
 
 function getServerSnapshot(): Mode {
-  return "auto";
+  return "dark";
 }
 
 export default function ThemeSwitch() {
   const mode = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   function apply(next: Mode) {
-    if (next === "light" || next === "dark") {
-      document.documentElement.setAttribute("data-theme", next);
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-    }
+    document.documentElement.setAttribute("data-theme", next);
     try {
       localStorage.setItem("wave-theme", next);
     } catch {}
@@ -38,7 +34,7 @@ export default function ThemeSwitch() {
 
   return (
     <div className="theme-switch" role="group" aria-label="Theme">
-      {(["auto", "light", "dark"] as Mode[]).map((m) => (
+      {(["light", "dark"] as Mode[]).map((m) => (
         <button
           key={m}
           type="button"
