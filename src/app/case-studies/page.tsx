@@ -11,7 +11,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="wrap">
+        <div className="wrap" data-reveal>
           <span className="eyebrow on-dark">Case Studies</span>
           <h1 className="h1" style={{ marginTop: "var(--space-4)" }}>Real problems. Real strategy.</h1>
           <p className="body1">
@@ -23,7 +23,7 @@ export default function CaseStudiesPage() {
 
       <section className="band">
         <div className="wrap">
-          <div className="case-grid">
+          <div className="case-grid" data-reveal-group>
             {caseStudies.map((c) => (
               <Link className="case-card" href={`/case-studies/${c.slug}`} key={c.slug}>
                 <span className="client mono">{c.client}</span>

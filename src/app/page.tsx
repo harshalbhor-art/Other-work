@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Icon } from "@/components/IconSprite";
+import Counter from "@/components/Counter";
+import Accordion from "@/components/Accordion";
 import { servicePillars, caseStudies, clients, faqs } from "@/lib/data";
 
 export default function HomePage() {
@@ -10,7 +12,7 @@ export default function HomePage() {
       {/* ============ HERO ============ */}
       <section className="hero">
         <div className="wrap">
-          <div>
+          <div data-reveal-group>
             <span className="eyebrow on-dark">Mumbai · Phygital Marketing · Est. 2014</span>
             <h1 className="h1 hero-title">
               Stop running nine campaigns.
@@ -27,12 +29,12 @@ export default function HomePage() {
               <Link className="btn btn-outline on-dark" href="/case-studies">See the Work</Link>
             </div>
             <div className="stat-row">
-              <div className="stat"><b>12+ yrs</b><span>Dedicated studio, since 2014</span></div>
-              <div className="stat"><b>9</b><span>Capabilities, one team</span></div>
-              <div className="stat"><b>360°</b><span>Phygital, not just digital</span></div>
+              <div className="stat"><b><Counter to={12} suffix="+ yrs" /></b><span>Dedicated studio, since 2014</span></div>
+              <div className="stat"><b><Counter to={9} /></b><span>Capabilities, one team</span></div>
+              <div className="stat"><b><Counter to={360} suffix="°" /></b><span>Phygital, not just digital</span></div>
             </div>
           </div>
-          <div className="hero-art">
+          <div className="hero-art" data-reveal-group>
             <span className="float-tag t1">Brand</span>
             <span className="float-tag t2">Digital</span>
             <span className="float-tag t3">Offline</span>
@@ -43,8 +45,8 @@ export default function HomePage() {
               <rect x="80" y="108" width="24" height="82" rx="3" fill="#e5e7eb" />
               <rect x="120" y="70" width="24" height="120" rx="3" fill="#e63946" />
               <rect x="160" y="34" width="24" height="156" rx="3" fill="#ffc61a" />
-              <path d="M40 128 L92 96 L132 58 L172 22" fill="none" stroke="#7fe0d3" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="1 9" />
-              <circle cx="172" cy="22" r="6" fill="#7fe0d3" />
+              <path className="draw-path" d="M40 128 L92 96 L132 58 L172 22" fill="none" stroke="#7fe0d3" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="1 9" />
+              <circle className="draw-dot" cx="172" cy="22" r="6" fill="#7fe0d3" />
             </svg>
           </div>
         </div>
@@ -53,7 +55,7 @@ export default function HomePage() {
       {/* ============ PROBLEM STATEMENT ============ */}
       <section className="band">
         <div className="wrap">
-          <div className="section-head center">
+          <div className="section-head center" data-reveal>
             <h2 className="h2">
               Your business doesn&apos;t need more vendors.
               <br />
@@ -64,7 +66,7 @@ export default function HomePage() {
               planned together instead of briefed separately.
             </p>
           </div>
-          <div className="pill-grid">
+          <div className="pill-grid" data-reveal-group>
             <div className="icon-pill">
               <div className="ic-wrap"><Icon id="ic-palette" /></div>
               <b>Brand</b>
@@ -97,13 +99,13 @@ export default function HomePage() {
       {/* ============ SERVICES ============ */}
       <section className="band band-teal" id="services">
         <div className="wrap">
-          <div className="section-head center">
+          <div className="section-head center" data-reveal>
             <span className="eyebrow" style={{ color: "#06201d" }}>What we cover</span>
             <h2 className="h2" style={{ marginTop: ".5rem" }}>
               Everything your marketing needs, under one roof
             </h2>
           </div>
-          <div className="svc-grid">
+          <div className="svc-grid" data-reveal-group>
             {servicePillars.map((s) => (
               <article className="svc-card" key={s.slug} id={s.slug}>
                 <div className="ic-wrap"><Icon id={s.icon} /></div>
@@ -122,13 +124,13 @@ export default function HomePage() {
       {/* ============ AUDIENCE ============ */}
       <section className="band">
         <div className="wrap">
-          <div className="section-head center">
+          <div className="section-head center" data-reveal>
             <span className="eyebrow">Who we work with</span>
             <h2 className="h2" style={{ marginTop: ".5rem" }}>
               Different businesses. Same problem.
             </h2>
           </div>
-          <div className="persona-grid">
+          <div className="persona-grid" data-reveal-group>
             <div className="persona-card">
               <h3 className="h3">Consumer Tech &amp; Electronics</h3>
               <p className="body2 muted">Category leaders who need product news to land as a story, not a spec sheet.</p>
@@ -164,7 +166,7 @@ export default function HomePage() {
           <p className="eyebrow" style={{ textAlign: "center", justifyContent: "center", marginBottom: "var(--space-6)" }}>
             Trusted by
           </p>
-          <div className="logo-strip">
+          <div className="logo-strip" data-reveal-group>
             {clients.map((c) => (
               <Link href="/clients" key={c.name} className="mark" style={{ textDecoration: "none" }}>
                 {c.name}
@@ -177,11 +179,11 @@ export default function HomePage() {
       {/* ============ CASE STUDY ============ */}
       <section className="band band-ink" id="work">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head" data-reveal>
             <span className="eyebrow on-dark">Success story</span>
             <h2 className="h2" style={{ marginTop: ".5rem" }}>Real problem. Real strategy.</h2>
           </div>
-          <div className="case-panel">
+          <div className="case-panel" data-reveal>
             <div className="case-art">
               <svg viewBox="0 0 200 150" aria-hidden="true">
                 <rect x="10" y="10" width="180" height="130" rx="10" fill="#1b2432" stroke="#33404e" />
@@ -234,7 +236,7 @@ export default function HomePage() {
               One in-house team runs all four steps, so nothing gets lost in a handoff between agencies.
             </p>
           </div>
-          <div className="step-list">
+          <div className="step-list" data-reveal-group>
             <div className="step">
               <span className="num mono">01</span>
               <div><h3>Understand</h3><p className="body2 muted">Audit the brand, the business and the market before any channel gets picked.</p></div>
@@ -258,7 +260,7 @@ export default function HomePage() {
       {/* ============ FEATURE STRIP ============ */}
       <section className="band-tight">
         <div className="wrap">
-          <div className="feature-strip">
+          <div className="feature-strip" data-reveal>
             <div>
               <span className="eyebrow" style={{ color: "var(--gold-text)" }}>Beyond the campaign</span>
               <h2 className="h2">We build the motion, not just the media plan.</h2>
@@ -276,24 +278,17 @@ export default function HomePage() {
       {/* ============ FAQ ============ */}
       <section className="band">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head" data-reveal>
             <span className="eyebrow">Questions</span>
             <h2 className="h2" style={{ marginTop: ".5rem" }}>Frequently asked questions</h2>
           </div>
-          <div className="faq-list">
-            {faqs.map((f) => (
-              <details className="faq-item" key={f.q}>
-                <summary>{f.q} <span className="plus mono">+</span></summary>
-                <p className="body2">{f.a}</p>
-              </details>
-            ))}
-          </div>
+          <Accordion items={faqs} />
         </div>
       </section>
 
       {/* ============ CTA ============ */}
       <section className="band band-ink">
-        <div className="wrap" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "var(--space-6)" }}>
+        <div className="wrap" data-reveal style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "var(--space-6)" }}>
           <div>
             <span className="eyebrow on-dark">Get in touch</span>
             <h2 className="h2" style={{ marginTop: ".5rem" }}>Let&apos;s plan the next move.</h2>

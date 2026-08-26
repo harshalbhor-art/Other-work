@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="wrap">
+        <div className="wrap" data-reveal>
           <span className="eyebrow on-dark">About Us</span>
           <h1 className="h1" style={{ marginTop: "var(--space-4)" }}>
             We started in one rented room.
@@ -27,7 +27,7 @@ export default function AboutPage() {
       </section>
 
       <section className="band">
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1.1fr .9fr", gap: "var(--space-8)", alignItems: "start" }}>
+        <div className="wrap" data-reveal-group style={{ display: "grid", gridTemplateColumns: "1.1fr .9fr", gap: "var(--space-8)", alignItems: "start" }}>
           <div className="prose" style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
             <span className="eyebrow">Our story</span>
             <p className="body1">
@@ -80,11 +80,11 @@ export default function AboutPage() {
 
       <section className="band" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head" data-reveal>
             <span className="eyebrow">How we got here</span>
             <h2 className="h2" style={{ marginTop: "var(--space-2)" }}>A short timeline</h2>
           </div>
-          <div className="timeline">
+          <div className="timeline" data-reveal-group>
             <div className="timeline-item">
               <span className="year mono">Early days</span>
               <p className="body1 muted">Started as a social media content agency, run out of a rented one-bedroom home.</p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
 
       <section className="band-tight">
         <div className="wrap">
-          <div className="feature-strip">
+          <div className="feature-strip" data-reveal>
             <div>
               <span className="eyebrow" style={{ color: "var(--gold-text)" }}>See it in practice</span>
               <h2 className="h2">The work behind the story.</h2>

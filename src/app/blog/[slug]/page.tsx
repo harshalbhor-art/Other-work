@@ -36,7 +36,7 @@ export default async function BlogPostPage({
   return (
     <>
       <section className="page-hero">
-        <div className="wrap">
+        <div className="wrap" data-reveal>
           <div className="breadcrumb">
             <Link href="/blog">Blog</Link> / {post.tag}
           </div>
@@ -48,7 +48,7 @@ export default async function BlogPostPage({
 
       <section className="band">
         <div className="wrap">
-          <div className="article-body">
+          <div className="article-body" data-reveal-group>
             {post.body.map((para, i) => (
               <p className="body1" key={i}>{para}</p>
             ))}
@@ -61,7 +61,7 @@ export default async function BlogPostPage({
           <div className="section-head">
             <span className="eyebrow">More from the studio</span>
           </div>
-          <div className="article-grid">
+          <div className="article-grid" data-reveal-group>
             {others.map((p) => (
               <Link className="post-card" href={`/blog/${p.slug}`} key={p.slug}>
                 <span className="eyebrow">{p.tag}</span>

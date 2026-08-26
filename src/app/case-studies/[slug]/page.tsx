@@ -32,7 +32,7 @@ export default async function CaseStudyDetail({
   return (
     <>
       <section className="page-hero">
-        <div className="wrap">
+        <div className="wrap" data-reveal>
           <div className="breadcrumb">
             <Link href="/case-studies">Case Studies</Link> / {study.client}
           </div>
@@ -48,7 +48,7 @@ export default async function CaseStudyDetail({
       </section>
 
       <section className="band">
-        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1fr .5fr", gap: "var(--space-8)" }}>
+        <div className="wrap" data-reveal-group style={{ display: "grid", gridTemplateColumns: "1fr .5fr", gap: "var(--space-8)" }}>
           <div className="article-body">
             {study.body.map((para, i) => (
               <p className="body1" key={i}>{para}</p>
@@ -79,7 +79,7 @@ export default async function CaseStudyDetail({
           <div className="section-head">
             <span className="eyebrow">More work</span>
           </div>
-          <div className="case-grid">
+          <div className="case-grid" data-reveal-group>
             {others.map((c) => (
               <Link className="case-card" href={`/case-studies/${c.slug}`} key={c.slug}>
                 <span className="client mono">{c.client}</span>

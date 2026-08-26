@@ -13,14 +13,14 @@ export default function ContactPage() {
   return (
     <section className="band band-ink">
       <div className="wrap">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <span className="eyebrow on-dark">Get in touch</span>
           <h1 className="h1" style={{ marginTop: "var(--space-4)" }}>Let&apos;s plan the next move.</h1>
           <p className="body1" style={{ color: "#c7cfd8", maxWidth: "52ch", marginTop: "var(--space-3)" }}>
             Tell us what&apos;s not connecting yet. We&apos;ll reply with next steps, not a form letter.
           </p>
         </div>
-        <div className="cta-panel">
+        <div className="cta-panel" data-reveal-group>
           <form className="contact-form" action={`mailto:${contact.email}`} method="post" encType="text/plain">
             <div className="field">
               <label htmlFor="cf-name">Name</label>

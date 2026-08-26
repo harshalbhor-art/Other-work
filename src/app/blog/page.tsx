@@ -15,7 +15,7 @@ export default function BlogIndex() {
   return (
     <>
       <section className="page-hero">
-        <div className="wrap">
+        <div className="wrap" data-reveal>
           <span className="eyebrow on-dark">Blog</span>
           <h1 className="h1" style={{ marginTop: "var(--space-4)" }}>Notes from the studio.</h1>
           <p className="body1">How we think about phygital strategy, in-house production and running one team instead of nine vendors.</p>
@@ -24,7 +24,7 @@ export default function BlogIndex() {
 
       <section className="band">
         <div className="wrap">
-          <div className="article-grid">
+          <div className="article-grid" data-reveal-group>
             {blogPosts.map((post) => (
               <Link className="post-card" href={`/blog/${post.slug}`} key={post.slug}>
                 <span className="eyebrow">{post.tag}</span>

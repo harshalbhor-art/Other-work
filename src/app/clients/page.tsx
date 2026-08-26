@@ -11,7 +11,7 @@ export default function ClientsPage() {
   return (
     <>
       <section className="page-hero">
-        <div className="wrap">
+        <div className="wrap" data-reveal>
           <span className="eyebrow on-dark">Our Clients</span>
           <h1 className="h1" style={{ marginTop: "var(--space-4)" }}>Brands we&apos;ve run with.</h1>
           <p className="body1">
@@ -23,7 +23,7 @@ export default function ClientsPage() {
 
       <section className="band">
         <div className="wrap">
-          <div className="client-grid">
+          <div className="client-grid" data-reveal-group>
             {clients.map((c) => {
               const relatedCount = caseStudies.filter((cs) => cs.client === c.name).length;
               const firstStudy = caseStudies.find((cs) => cs.client === c.name);
@@ -49,7 +49,7 @@ export default function ClientsPage() {
 
       <section className="band-tight" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <div className="feature-strip">
+          <div className="feature-strip" data-reveal>
             <div>
               <span className="eyebrow" style={{ color: "var(--gold-text)" }}>Join the list</span>
               <h2 className="h2">Want to be the next one here?</h2>

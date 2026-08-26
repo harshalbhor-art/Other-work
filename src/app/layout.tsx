@@ -4,6 +4,7 @@ import "./globals.css";
 import IconSprite from "@/components/IconSprite";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body>
         <a className="skip-link" href="#main">Skip to content</a>
         <IconSprite />
+        <ScrollReveal />
         <Header />
         <main id="main">{children}</main>
         <Footer />
